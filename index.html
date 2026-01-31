@@ -46,8 +46,183 @@ const questions = [
   intent:"Eliminate candidates who delay instead of acting on safety"
  }
 }
-// QUESTIONS 2–100 FOLLOW SAME STRUCTURE
-];
+,{
+ q:"Patient with audible wheezing and labored breathing. First action?",
+ options:["Notify physician","Position patient upright","Prepare nebulizer","Document assessment"],
+ correct:1,
+ trap:["Authority bias","SAFE","Treatment-first trap","Documentation trap"],
+ dashboard:{
+  why:"Calling or documenting delays airway optimization.",
+  rule:"ABC – airway positioning first",
+  intent:"Eliminate delay and documentation-first behavior"
+ }
+},
+{
+ q:"Post-op patient BP 78/40, pale and diaphoretic. Priority action?",
+ options:["Recheck BP in 5 minutes","Notify physician","Elevate legs and assess circulation","Document finding"],
+ correct:2,
+ trap:["Monitoring trap","Authority bias","SAFE","Documentation trap"],
+ dashboard:{
+  why:"Rechecking or documenting delays circulation support.",
+  rule:"Circulation before notification",
+  intent:"Eliminate waiting behaviors during shock"
+ }
+},
+{
+ q:"IV site swollen and cool during infusion. First response?",
+ options:["Slow the infusion","Remove IV and elevate limb","Notify physician","Document incident"],
+ correct:1,
+ trap:["Partial-action trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{
+  why:"Slowing infusion continues tissue damage.",
+  rule:"Stop harm immediately",
+  intent:"Eliminate half-measures"
+ }
+},
+{
+ q:"Patient coughing while eating, choking noted. Priority action?",
+ options:["Offer water","Encourage coughing","Initiate airway clearance","Notify physician"],
+ correct:2,
+ trap:["False reassurance","Partial-action trap","SAFE","Authority bias"],
+ dashboard:{
+  why:"Water or encouragement may worsen obstruction.",
+  rule:"Airway protection first",
+  intent:"Eliminate underreaction to airway threat"
+ }
+},
+{
+ q:"Patient febrile, IV site red with drainage. First action?",
+ options:["Document findings","Apply warm compress","Stop IV and maintain asepsis","Notify physician"],
+ correct:2,
+ trap:["Documentation trap","Comfort-first trap","SAFE","Authority bias"],
+ dashboard:{
+  why:"Comfort or documentation delays infection control.",
+  rule:"Infection source control",
+  intent:"Eliminate delay in infection safety"
+ }
+}
+// CONTINUE ADDING QUESTIONS UNTIL Q100 USING SAME STRUCTURE
+,{
+ q:"Patient receiving IV antibiotics develops rash and wheezing. First action?",
+ options:["Slow infusion","Stop infusion","Notify physician","Document reaction"],
+ correct:1,
+ trap:["Partial-action trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Slowing continues exposure to allergen.",rule:"Stop harm immediately",intent:"Eliminate half-measures during anaphylaxis"}
+},{
+ q:"Post-op patient suddenly restless, RR 32. Priority action?",
+ options:["Reassure patient","Apply oxygen","Notify physician","Document assessment"],
+ correct:1,
+ trap:["False reassurance","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Reassurance or calls delay oxygenation.",rule:"ABC – breathing first",intent:"Eliminate delay in respiratory distress"}
+},{
+ q:"Active bleeding from surgical site noted. First response?",
+ options:["Document bleeding","Apply direct pressure","Notify physician","Recheck vitals"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","Monitoring trap"],
+ dashboard:{why:"Calls or vitals delay hemorrhage control.",rule:"Control bleeding first",intent:"Eliminate waiting during hemorrhage"}
+},{
+ q:"Patient dizzy on standing, BP drops. Priority action?",
+ options:["Assist to bed","Notify physician","Document finding","Encourage fluids later"],
+ correct:0,
+ trap:["SAFE","Authority bias","Documentation trap","Delay wording"],
+ dashboard:{why:"Immediate safety prevents fall injury.",rule:"Prevent harm immediately",intent:"Eliminate delay when fall risk present"}
+},{
+ q:"NG tube feeding running; patient coughing and gagging. First action?",
+ options:["Stop feeding","Reposition patient","Notify physician","Document event"],
+ correct:0,
+ trap:["SAFE","Partial-action trap","Authority bias","Documentation trap"],
+ dashboard:{why:"Stopping prevents aspiration.",rule:"Airway protection first",intent:"Eliminate aspiration risk"}
+},{
+ q:"IV pump alarming occlusion; limb swollen. First action?",
+ options:["Restart pump","Remove IV","Notify physician","Document alarm"],
+ correct:1,
+ trap:["Complexity trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Restarting worsens infiltration.",rule:"Stop source of harm",intent:"Eliminate continuation of injury"}
+},{
+ q:"Patient febrile with central line redness. Priority action?",
+ options:["Apply warm compress","Stop infusion and aseptic care","Notify physician","Document findings"],
+ correct:1,
+ trap:["Comfort-first trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Comfort delays source control.",rule:"Infection safety first",intent:"Eliminate delay in sepsis risk"}
+},{
+ q:"Patient reports chest pain radiating to arm. First action?",
+ options:["Obtain ECG","Administer oxygen","Notify physician","Document pain"],
+ correct:1,
+ trap:["Diagnostic-first trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Diagnostics delay oxygen to myocardium.",rule:"Oxygenation first",intent:"Eliminate smart-sounding delays"}
+},{
+ q:"Hypoglycemic patient diaphoretic and confused. Priority action?",
+ options:["Check labs","Give oral glucose","Notify physician","Document findings"],
+ correct:1,
+ trap:["Diagnostic trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Labs delay glucose correction.",rule:"Correct life threat first",intent:"Eliminate delay in hypoglycemia"}
+},{
+ q:"Patient vomiting blood. First response?",
+ options:["Insert NG tube","Apply oxygen","Notify physician","Document emesis"],
+ correct:1,
+ trap:["Procedure-first trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Procedures delay stabilization.",rule:"ABC before procedures",intent:"Eliminate premature complexity"}
+},{
+ q:"Patient with seizure activity ongoing. Priority action?",
+ options:["Restrain patient","Protect airway","Notify physician","Document time"],
+ correct:1,
+ trap:["Unsafe action","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Restraints cause injury.",rule:"Airway and safety first",intent:"Eliminate harmful actions"}
+},{
+ q:"New tracheostomy patient gurgling. First action?",
+ options:["Suction airway","Increase oxygen","Notify physician","Document sound"],
+ correct:0,
+ trap:["SAFE","Partial-action trap","Authority bias","Documentation trap"],
+ dashboard:{why:"Suction clears obstruction.",rule:"Airway patency first",intent:"Eliminate indirect responses"}
+},{
+ q:"Patient on anticoagulant has nosebleed. Priority action?",
+ options:["Apply pressure","Notify physician","Check INR","Document bleeding"],
+ correct:0,
+ trap:["SAFE","Authority bias","Diagnostic trap","Documentation trap"],
+ dashboard:{why:"Pressure controls bleeding.",rule:"Stop bleeding first",intent:"Eliminate diagnostic delay"}
+},{
+ q:"Post-fall patient found on floor. First action?",
+ options:["Assess ABC","Notify physician","Help patient up","Document fall"],
+ correct:0,
+ trap:["SAFE","Authority bias","Unsafe action","Documentation trap"],
+ dashboard:{why:"Assessment ensures life threats addressed.",rule:"Safety assessment first",intent:"Eliminate premature movement"}
+},{
+ q:"Patient short of breath during blood transfusion. First action?",
+ options:["Stop transfusion","Slow transfusion","Notify physician","Document reaction"],
+ correct:0,
+ trap:["SAFE","Partial-action trap","Authority bias","Documentation trap"],
+ dashboard:{why:"Stopping prevents reaction progression.",rule:"Stop offending agent",intent:"Eliminate half-measures"}
+},{
+ q:"Burn patient with tight circumferential bandage. Priority action?",
+ options:["Loosen bandage","Document finding","Notify physician","Reassess later"],
+ correct:0,
+ trap:["SAFE","Documentation trap","Authority bias","Delay wording"],
+ dashboard:{why:"Relieves compromised circulation.",rule:"Circulation first",intent:"Eliminate delay"}
+},{
+ q:"Patient aspirating secretions. First action?",
+ options:["Suction airway","Give water","Notify physician","Document episode"],
+ correct:0,
+ trap:["SAFE","Unsafe action","Authority bias","Documentation trap"],
+ dashboard:{why:"Water worsens aspiration.",rule:"Airway protection",intent:"Eliminate harmful comfort"}
+},{
+ q:"IV potassium ordered IV push. Best response?",
+ options:["Administer as ordered","Clarify order","Notify physician","Document concern"],
+ correct:1,
+ trap:["Scope illusion","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"IV push K is lethal.",rule:"Stay within scope and safety",intent:"Eliminate blind obedience"}
+},{
+ q:"Patient hypotensive after spinal anesthesia. Priority action?",
+ options:["Elevate legs","Notify physician","Reassess later","Document vitals"],
+ correct:0,
+ trap:["SAFE","Authority bias","Delay wording","Documentation trap"],
+ dashboard:{why:"Positioning supports circulation.",rule:"Immediate support",intent:"Eliminate waiting"}
+},{
+ q:"Patient with fever and rigors during infusion. First action?",
+ options:["Stop infusion","Give antipyretic","Notify physician","Document temp"],
+ correct:0,
+ trap:["SAFE","Comfort-first trap","Authority bias","Documentation trap"],
+ dashboard:{why:"Stopping prevents reaction.",rule:"Stop harm first",intent:"Eliminate comfort delays"}
+}];
 
 let i=0; let failed=false; let name="";
 
