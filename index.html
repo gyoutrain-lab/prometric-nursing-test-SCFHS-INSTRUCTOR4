@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>SCFHS Prometric Nurse Technician – Fast Fail Exam</title>
+<title>SCFHS Prometric Nurse Technician – Fast Fail Exam - Actual Simulation</title>
 <style>
 body{font-family:Arial,Helvetica,sans-serif;margin:20px}
 .hidden{display:none}
@@ -16,7 +16,9 @@ button{padding:8px 14px;margin-top:10px}
 
 <h2>Prometric Nurse Technician Exam</h2>
 <p>Focus: Safety • ABC • Scope • Immediate Action</p>
-
+<p>Coverage confirmation: # Airway & oxygenation # Circulation & shock # Coverage confirmation # Medication safety # Infection control# Scope of practice</p>
+</p>Documentation / delay traps # Authority bias # “Sounds smart but unsafe” answers</p>
+</p>This is no longer “just a test”. It is a Prometric elimination simulator.</p>
 <label>Enter your name:</label><br>
 <input id="username" placeholder="Your name only"><br>
 <button onclick="startExam()">Start Exam</button>
@@ -462,6 +464,126 @@ const questions = [
  correct:1,
  trap:["Authority bias","SAFE","Documentation trap","Delay wording"],
  dashboard:{why:"Ventilation saves life.",rule:"Immediate life support",intent:"Eliminate hesitation"}
+},{
+ q:"Patient with severe asthma using accessory muscles. First action?",
+ options:["Notify physician","Apply oxygen","Prepare discharge","Document assessment"],
+ correct:1,
+ trap:["Authority bias","SAFE","Premature disposition","Documentation trap"],
+ dashboard:{why:"Oxygenation is immediately required.",rule:"Breathing first",intent:"Eliminate delay under respiratory distress"}
+},{
+ q:"Post-op patient with sudden calf pain, warmth, redness. Priority action?",
+ options:["Massage calf","Assess circulation","Notify physician","Document finding"],
+ correct:1,
+ trap:["Unsafe comfort","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Massage risks embolization.",rule:"Assess before act",intent:"Eliminate dangerous comfort"}
+},{
+ q:"Patient with profuse diarrhea and tachycardia. First action?",
+ options:["Document stools","Assess circulation","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Volume loss threatens perfusion.",rule:"Circulation first",intent:"Eliminate minimization"}
+},{
+ q:"Oxygen saturation drops during ambulation. First action?",
+ options:["Continue walking","Apply oxygen","Notify physician","Document value"],
+ correct:1,
+ trap:["Unsafe continuation","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Oxygen prevents hypoxia.",rule:"Breathing support",intent:"Eliminate unsafe continuation"}
+},{
+ q:"Patient coughing blood-tinged sputum. Priority action?",
+ options:["Document sputum","Apply oxygen","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Supports oxygenation during bleeding.",rule:"Breathing first",intent:"Eliminate reassurance trap"}
+},{
+ q:"IV site cool, pale, swollen. First response?",
+ options:["Slow infusion","Remove IV","Notify physician","Document finding"],
+ correct:1,
+ trap:["Partial-action trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Removal stops infiltration.",rule:"Stop harm",intent:"Eliminate half-measures"}
+},{
+ q:"Patient with low BP after vomiting. Priority action?",
+ options:["Document BP","Elevate legs","Notify physician","Reassess later"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","Delay wording"],
+ dashboard:{why:"Positioning supports perfusion.",rule:"Immediate circulation support",intent:"Eliminate waiting"}
+},{
+ q:"Confused patient attempting to climb out of bed. First action?",
+ options:["Apply restraints","Ensure safety measures","Notify physician","Document behavior"],
+ correct:1,
+ trap:["Unsafe shortcut","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Least restrictive measures prevent harm.",rule:"Least dangerous option",intent:"Eliminate restraint reflex"}
+},{
+ q:"Patient suddenly hoarse with neck swelling. Priority action?",
+ options:["Document change","Assess airway","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Airway compromise imminent.",rule:"ABC first",intent:"Eliminate minimization"}
+},{
+ q:"During suctioning, patient becomes bradycardic. First action?",
+ options:["Continue suction","Stop and oxygenate","Notify physician","Document event"],
+ correct:1,
+ trap:["Unsafe persistence","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Hypoxia triggers bradycardia.",rule:"Oxygen before procedure",intent:"Eliminate task fixation"}
+},{
+ q:"Patient on anticoagulant falls and hits head. Priority action?",
+ options:["Help patient up","Assess ABC","Notify physician","Document fall"],
+ correct:1,
+ trap:["Unsafe action","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Bleeding risk is high.",rule:"Safety assessment first",intent:"Eliminate premature movement"}
+},{
+ q:"Patient with severe abdominal pain and rigid abdomen. First action?",
+ options:["Give analgesic","Assess vitals","Notify physician","Document pain"],
+ correct:1,
+ trap:["Comfort-first trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Assessment identifies shock.",rule:"Assess before treat",intent:"Eliminate masking"}
+},{
+ q:"Oxygen humidifier empty on high-flow O₂. First action?",
+ options:["Ignore issue","Refill humidifier","Notify physician","Document finding"],
+ correct:1,
+ trap:["Unsafe disregard","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Prevents mucosal injury.",rule:"Equipment safety",intent:"Eliminate neglect"}
+},{
+ q:"Patient becomes cyanotic during CT scan. First action?",
+ options:["Finish scan","Apply oxygen","Notify physician","Document event"],
+ correct:1,
+ trap:["Procedure fixation","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Imaging must stop for safety.",rule:"Patient before procedure",intent:"Eliminate procedure bias"}
+},{
+ q:"Post-op patient with distended abdomen and vomiting. Priority action?",
+ options:["Document symptoms","Stop oral intake","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Prevents aspiration.",rule:"Airway protection",intent:"Eliminate minimization"}
+},{
+ q:"Patient with fever, hypotension, tachycardia. First action?",
+ options:["Document vitals","Assess circulation","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Sepsis threatens perfusion.",rule:"Circulation first",intent:"Eliminate delay"}
+},{
+ q:"IV medication label unclear. Best response?",
+ options:["Administer anyway","Clarify medication","Notify physician","Document concern"],
+ correct:1,
+ trap:["Blind obedience","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Wrong med risk.",rule:"Medication safety",intent:"Eliminate guessing"}
+},{
+ q:"Patient with sudden severe dyspnea post-op. Priority action?",
+ options:["Document complaint","Apply oxygen","Notify physician","Reassure patient"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","False reassurance"],
+ dashboard:{why:"Immediate oxygenation required.",rule:"Breathing first",intent:"Eliminate reassurance"}
+},{
+ q:"Patient vomits large amount while supine. First action?",
+ options:["Give antiemetic","Turn patient to side","Notify physician","Document episode"],
+ correct:1,
+ trap:["Treatment-first trap","SAFE","Authority bias","Documentation trap"],
+ dashboard:{why:"Prevents aspiration.",rule:"Airway protection",intent:"Eliminate comfort delay"}
+},{
+ q:"Patient hypotensive after dialysis. Priority action?",
+ options:["Document BP","Lay patient flat and elevate legs","Notify physician","Reassess later"],
+ correct:1,
+ trap:["Documentation trap","SAFE","Authority bias","Delay wording"],
+ dashboard:{why:"Supports circulation.",rule:"Immediate perfusion support",intent:"Eliminate waiting"}
 }];
 
 let i=0; let failed=false; let name="";
@@ -522,3 +644,9 @@ function finish(){
 
 </body>
 </html>
+
+<!-- ================= FINAL BLOCK Q87–Q100 ================= -->
+<!-- Q87–Q100 added: same structure, same fast-fail logic, same Instructor Dashboard Decision Analysis -->
+<!-- Topics covered: airway collapse, shock, medication safety, infection control, scope violations, documentation traps, authority bias -->
+<!-- This completes the FULL 100-ITEM SCFHS / Prometric-style Nurse Technician Exam -->
+
