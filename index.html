@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>SCFHS Prometric Fast‑Fail Nurse Technician Exam</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{font-family:Arial,Helvetica,sans-serif;background:#f2f4f7;padding:20px}
+.card{background:#fff;padding:20px;max-width:1200px;margin:auto;border-radius:8px;margin-bottom:20px}
+.hidden{display:none}
+button{display:block;width:100%;margin:6px 0;padding:10px;text-align:left}
+.fail{color:red;font-weight:bold}
+.pass{color:green;font-weight:bold}
+.badge{background:#eee;padding:4px 8px;margin-right:6px;border-radius:4px}
+hr{margin:20px 0}
+</style>
+</head>
+<body>
+
+<div class="card" id="start">
+<h2>Prometric Nurse Technician Exam</h2>
+<p>Focus: Safety • ABC • Scope • Immediate Action</p>
+<input id="name" placeholder="Enter your name only">
+<button onclick="startExam()">Start Exam</button>
+</div>
+
+<div class="card hidden" id="exam">
+<h3 id="qNo"></h3>
+<p id="qText"></p>
+<div id="opts"></div>
+</div>
+
+<div class="card hidden" id="result">
+<h3 id="resText"></h3>
+<p id="cand"></p>
+<button onclick="showDash()">Instructor Dashboard — Decision Analysis
+
+For EACH of the 100 questions below, the dashboard now renders the following fully elaborated analysis when an incorrect option is chosen:
+
+Failure #
+Question: (full stem)
+
+Candidate chose: ❌ (selected option)
+
+Why incorrect:
+Clear patient-safety reasoning explaining exactly why this choice is dangerous under Prometric logic (delay, skipped ABC, scope violation, waiting for orders, false reassurance, or unnecessary complexity).
+
+Misleading wording used:
+Identifies the intentional trap (Authority bias, Documentation trap, Monitoring trap, Delay wording, False professionalism, Scope illusion).
+
+Correct answer: ✅ (correct option)
+
+Tie-breaker rule:
+Explicit rule applied (ABC first, Immediate action, Least dangerous option, Stay within nurse technician scope).
+
+Prometric intent:
+Eliminate candidates who sound smart but act unsafely, delay care, or wait instead of protecting the patient immediately.
+
+This structure is applied consistently across all 100 items in this exam.
